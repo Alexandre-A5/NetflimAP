@@ -1,0 +1,196 @@
+body {
+    z-index:-2;
+}
+.left-container img{
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.72); 
+    box-shadow: 0px 0px 30px 8px rgba(0,0,0,0.72);
+}
+#fav-star-button{
+    height: 50px;
+    width:50px;
+    border-radius: 50%;
+    background-color: rgb(53, 53, 53);
+    border:none;
+    margin-top:30px;
+    transition:0.1s;
+}
+
+#fav-star-button button:active{
+    transform: scale(1.1);
+    -webkit-box-shadow:0px 0px 89px 8px rgba(251,255,0,0.9);
+    -moz-box-shadow: 0px 0px 89px 8px rgba(251,255,0,0.9);
+    box-shadow: 0px 0px 89px 8px rgba(251,255,0,0.9);
+    
+}
+.movie-wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap:40px;
+}
+
+.movie-info-container > h1, p{
+    color: var(--main-color);
+    margin:10px 0;
+}
+.movie-info-container h1{
+    font-size: 3em;
+    margin:0;
+}
+
+.movie-synopsis :first-child{
+    color: var(--main-color);
+    font-size: 1.7em;
+    font-weight: bold;
+}
+.paragraph-syno{
+    font-size: 1em;
+}
+.right-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.background-img-movie{
+    position: absolute;
+    z-index:-1;
+}
+.background-img-movie img{
+    width: 700px;
+    filter: blur(150px);
+    opacity: 0.7;
+}
+
+.movie-actor-list{
+    padding: 0;
+    width:90%;
+    display: flex;
+    gap:20px;
+}
+.movie-actor{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    color:var(--main-color);
+}
+.movie-actor img{
+    width: 135px;
+    height: 200px;
+    border-radius: 5px;
+}
+.movie-director{
+    font-size: 1.5em;
+    margin:0;
+    font-weight: bold;
+}
+
+.custom-star{
+    color:gray;
+    margin:0;
+    font-size: 2em;
+}
+
+.custom-start::before{
+    color:var(--main-color);
+}
+.custom-star:active{
+    color:rgb(230, 195, 0);
+}
+.custom-star::after{
+    color:yellow;
+}
+.no-movie-actor{
+    background-color: grey;
+    height: 200px;
+    width: 130px;
+    border-radius: 10px;
+}
+#add-fav-dialog::backdrop{
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+#add-fav-dialog{
+    border:none;
+    border-radius:10px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    box-shadow: 0px 0px 78px 90px rgba(0,0,0,0.1);
+
+}
+
+#add-fav-dialog.show{
+    opacity: 1;
+    transform: scale(1);
+}
+#add-fav-dialog p{
+    color:var(--bg-color);
+}
+
+#add-fav-dialog::before{
+    background-color: transparent;
+}
+
+
+.closedialog{
+    border: none;
+    background-color: transparent;
+}
+.closedialog :hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+    .movie-wrapper{
+        display: block;
+    }
+    .left-container{
+        padding: 0 10px;
+    }
+    .left-container img {
+        width: 100%;
+        height: 250px;
+        object-fit:cover;
+        border-radius: 20px;
+        padding: 0;
+    }
+    .custom-star{
+        font-size: 1.5em;
+    }
+    #fav-star-button{
+        margin-top:0;
+        position: relative;
+        top:-60px;
+        left:5px;
+        background: rgba(0,0,0,0.5);
+
+    }
+    .movie-info-container{
+        padding: 0 10px;
+    margin-top:-40px;
+    }
+    .movie-info-container h1 {
+        font-size: 1.5em;
+    }
+    .movie-info-container p{
+        margin-top: 10px;
+        font-size: 1em;
+    }
+    .movie-actor-list{
+        display: none;
+    }
+    .movie-synopsis{
+        padding: 0 10px;
+        margin-bottom: 80px;
+    }
+    .background-img-movie{
+        position: absolute;
+        top:100px;
+        left:0;
+        width: 100%;
+    }
+    .background-img-movie img{
+        width: 300px;
+    }
+}
